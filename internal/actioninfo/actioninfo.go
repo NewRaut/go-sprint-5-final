@@ -14,12 +14,12 @@ func Info(dataset []string, dp DataParser) {
 	for _, data := range dataset {
 		err := dp.Parse(data)
 		if err != nil {
-			log.Printf("invalid data from '%s': %w", data, err)
+			log.Printf("invalid data from '%s': %v", data, err)
 			continue
 		}
 		infoAction, err := dp.ActionInfo()
 		if err != nil {
-			log.Printf("invalid data from '%s': %w", data, err)
+			log.Printf("invalid data from '%s': %v", data, err)
 			continue
 		}
 
