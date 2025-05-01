@@ -30,8 +30,7 @@ func WalkingSpentCalories(steps int, weight, height float64, duration time.Durat
 	durationInMinutes := duration.Minutes()
 	calories := ((weight * meanSpeed * durationInMinutes) / minInH) * walkingCaloriesCoeff
 
-	// Округляем до 2 знаков после запятой
-	return float64(int(calories*100)) / 100, nil
+	return calories, nil
 }
 
 func RunningSpentCalories(steps int, weight, height float64, duration time.Duration) (float64, error) {
@@ -53,7 +52,7 @@ func RunningSpentCalories(steps int, weight, height float64, duration time.Durat
 	calories := (weight * meanSpeed * durationInMinutes) / minInH
 
 	// Округляем до 2 знаков после запятой
-	return float64(int(calories*100)) / 100, nil
+	return calories, nil
 }
 
 func MeanSpeed(steps int, height float64, duration time.Duration) float64 {
